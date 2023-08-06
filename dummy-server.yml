@@ -14,7 +14,7 @@
     - name: Ensure Nginx service is running
       service:
         name: nginx
-        state: stopped
+        state: started
         enabled: yes
       tags:
         - restart_nginx
