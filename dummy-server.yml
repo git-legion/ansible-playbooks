@@ -1,0 +1,20 @@
+---
+- name: Install Nginx and enable/start the service
+  hosts: 65.0.26.195
+  become: true  # This will elevate privileges to perform administrative tasks
+
+  tasks:
+    - name: Install Nginx package
+      apt:
+        name: nginx  # For Debian-based systems, use "nginx" as the package name. For other systems, modify accordingly.
+        state: present
+      tags:
+        - install_nginx
+
+    - name: Ensure Nginx service is running
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+      tags:
+        - restart_nginx
