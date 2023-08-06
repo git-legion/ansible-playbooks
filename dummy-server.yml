@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx and enable/start the service
-  hosts: 65.0.26.195
+  hosts: dummy-server1
   become: true  # This will elevate privileges to perform administrative tasks
 
   tasks:
